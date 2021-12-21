@@ -1,0 +1,28 @@
+public class Sample1 {
+	@BeforeClass
+	public void browser() {
+		Reporter.log("---broser launch-----",true);
+	}
+
+	@BeforeMethod
+	public void login() {
+		Reporter.log(".......login to app",true);
+	}
+
+	@Test
+	public void VerifyID1 () {
+		Reporter.log("running verify userID1",true);
+	}
+	@Test
+	public void VerifyID2 () {
+		Reporter.log("running verify userID2",true);
+	}
+	@AfterMethod
+	public void logout() {
+		Reporter.log("......logout from app",true);
+	}
+	@AfterClass
+	public void browser1() {
+		Reporter.log("----browser closed------",true);
+	}
+
