@@ -1,0 +1,36 @@
+public class Popup {
+	public void test() throws InterruptedException {
+		
+		System.setProperty("webdriver.chrome.driver", Pathconfig.drivepath);
+		
+		WebDriver driver =new ChromeDriver();
+		
+		driver.get("https://demoqa.com/alerts");
+		driver.manage().window().maximize();
+	//	---------------------------------------------------------------------------------------------------
+//		driver.findElement(By.xpath("//button[@id='alertButton']")).click();
+//		Alert alt = driver.switchTo().alert();
+//		Thread.sleep(2000);
+//	
+//		System.out.println(alt.getText());
+//		alt.accept();
+//////-----------------------------------------------------------------------------------------------------------		
+//	driver.findElement(By.xpath("//button[@id='confirmButton']")).click();
+//	Alert alt1 = driver.switchTo().alert();
+//	Thread.sleep(2000);
+//	alt1.accept();
+////---------------------------------------------------------------------------------------------------------------------
+	driver.findElement(By.xpath("//button[@id='promtButton']")).click();
+	Alert alt2 = driver.switchTo().alert();
+	Thread.sleep(2000);
+	alt2.sendKeys("qwerty");
+	alt2.accept();
+//		//driver.quit();
+	}
+	public static void main(String[] args) throws InterruptedException {
+		Popup p=new Popup();
+		p.test();
+	}
+	
+
+}
